@@ -28,7 +28,7 @@ When you enter a name and clicking find the hero you get the image of your hero.
 
 ### Resources
 
-This API project has been created with using the website ![Super-Hero-API.](https://superheroapi.com/)
+This API project has been created with using the website [Super-Hero-API.](https://superheroapi.com/)
 
 ### Contact Me
 
