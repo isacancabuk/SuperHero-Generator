@@ -44,7 +44,7 @@ button {
 }
 
 img {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 200px;
   height: 200px;
 }
@@ -54,4 +54,21 @@ img {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 24px;
   margin-top: 20px;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.hero-name {
+  font-size: 24px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 36px;
+  }
 }

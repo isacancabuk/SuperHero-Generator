@@ -17,10 +17,13 @@ const getRandom = number => {
     .then(json => {
       console.log(json)
       if (json.response === 'error') {
-        footer.innerHTML = `<p class="not-found">Hero not found</p>`
+        footer.innerHTML = `
+        <p class="not-found">Hero not found</p>`
         return
       }
-      footer.innerHTML = `<img src="${json.image.url}"/>`
+      footer.innerHTML = `
+        <h2 class="hero-name">${json.name}</h2>
+      <img src="${json.image.url}"/>`
     })
 }
 
@@ -34,7 +37,9 @@ const getHero = () => {
         footer.innerHTML = `<p class="not-found">Hero not found</p>`
         return
       }
-      footer.innerHTML = `<img src="${json.results[0].image.url}"/>`
+      footer.innerHTML = `
+      <h2 class="hero-name">${json.results[0].name}</h2>
+      <img src="${json.results[0].image.url}"/>`
     })
 }
 
