@@ -48,3 +48,10 @@ img {
   width: 200px;
   height: 200px;
 }
+
+.not-found {
+  color: beige;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  margin-top: 20px;
+}

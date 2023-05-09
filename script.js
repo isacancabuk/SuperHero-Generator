@@ -14,17 +14,38 @@ const randomNumber = () => {
 const getRandom = number => {
   fetch(`https://www.superheroapi.com/api.php/6276633832387040/${number}`)
     .then(response => response.json())
-    .then(json => (footer.innerHTML = `<img src="${json.image.url}"/>`))
+    .then(json => {
+      console.log(json)
+      if (json.response === 'error') {
+        footer.innerHTML = `<p class="not-found">Hero not found</p>`
+        return
+      }
+      footer.innerHTML = `<img src="${json.image.url}"/>`
+    })
 }
 
 const getHero = () => {
   // console.log('birsey')
   fetch(`https://www.superheroapi.com/api.php/6276633832387040/search/${input.value}`)
     .then(response => response.json())
-    .then(json => (footer.innerHTML = `<img src="${json.results[0].image.url}"/>`))
+    .then(json => {
+      //console.log(json)
+      if (json.response === 'error') {
+        footer.innerHTML = `<p class="not-found">Hero not found</p>`
+        return
+      }
+      footer.innerHTML = `<img src="${json.results[0].image.url}"/>`
+    })
 }
 
 getRandom(randomNumber())
-getHero()
+if (input.value) getHero()
+//getHero()
 
-randomHero.onclick = () => getRandom(randomNumber())
+findHero.addEventListener('click', () => {
+  getHero()
+})
+
+randomHero.addEventListener('click', () => {
+  getRandom(randomNumber())
+})
